@@ -40,8 +40,11 @@ int	is_map(t_ut *ut)
 		i = 0;
 		while (ut->map[j][i])
 		{
-			if (ut->map[j][i] != ' ' && ut->map[j][i] != '0' && ut->map[j][i] != '1' && ut->map[j][i] != 'C' && ut->map[j][i] != 'E' && ut->map[j][i] != 'P')
+			if (ut->map[j][i] != '0' && ut->map[j][i] != '1' && ut->map[j][i] != 'C' && ut->map[j][i] != 'E' && ut->map[j][i] != 'P')
+			{	
+				ft_putstr_fd("Error\nwrong char in map", 0);
 				return (0);
+			}
 			i++;
 		}
 		j++;

@@ -5,7 +5,7 @@ MAIN = ./main.c
 OBJ_MAIN = ${MAIN:.c=.o}
 
 SRCS = srcs/utils.c srcs/parse.c srcs/get_next_line.c \
-srcs/get_next_line_utils.c
+srcs/get_next_line_utils.c srcs/map_checker.c
 
 PATH_SRCS = ./
 
