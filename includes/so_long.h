@@ -21,6 +21,7 @@ typedef struct  s_ut
 	char	*map_name;
 	char	**map;
 	int		map_size;
+	int		map_exist;
 }               t_ut;
 
 void	get_map_size(t_ut *ut);
@@ -28,5 +29,6 @@ void	map_malloc(t_ut *ut);
 int		get_next_line(int fd, char **line);
 void	print_map(t_ut *ut);
 void	ft_free(t_ut *ut);
+int		is_map(t_ut *ut);
 
 #endif
