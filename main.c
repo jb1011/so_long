@@ -10,4 +10,6 @@ int main(int argc, char **argv)
     else
         get_map_size(&ut);
     ft_free(&ut);
+	// ft_destroy_text(&ut);
+
 }

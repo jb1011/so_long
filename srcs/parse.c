@@ -45,13 +45,14 @@ void	map_malloc(t_ut *ut)
 	}
 	ut->map[i] = ft_strdup(str);
 	free(str);
-	if (map_check(ut))
-		i = 0;
+	if (map_check(ut) == 1)
+		window_init(ut);
 }
 
 int	map_check(t_ut *ut)
 {
-	if (!is_map(ut) || !map_check_wall(ut) || !map_check_side_wall(ut) || !map_check_spawn(ut) || map_check_rect(ut))
+	if (!is_map(ut) || !map_check_wall(ut) || !map_check_side_wall(ut) ||
+		!map_check_spawn(ut) || !map_check_rect(ut))
 	{
 		return (0);
 	}
