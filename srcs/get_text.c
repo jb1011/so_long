@@ -54,6 +54,8 @@ void	ft_destroy_text(t_ut *ut)
 		mlx_destroy_image(ut->mlx_ptr, ut->text[2].img);
 	if (ut->text[3].img)
 		mlx_destroy_image(ut->mlx_ptr, ut->text[3].img);
+	if (ut->text[4].img)
+		mlx_destroy_image(ut->mlx_ptr, ut->text[4].img);
 	mlx_destroy_display(ut->mlx_ptr);
 	exit(0);
 }
