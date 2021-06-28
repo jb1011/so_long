@@ -38,6 +38,7 @@ int	map_check_spawn(t_ut *ut)
 	ut->is_spawn = 0;
 	ut->collect = 0;
 	ut->is_exit = 0;
+	ut->take = 0;
 	while (j < ut->map_size)
 	{
 		i = 0;

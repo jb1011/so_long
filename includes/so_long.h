@@ -53,6 +53,7 @@ typedef struct	s_ut
 	int		is_spawn;
 	int		is_exit;
 	int		collect;
+	int		take;
 	int		len;
 	size_t	length;
 	void	*mlx_ptr;
@@ -82,5 +83,6 @@ int		deal_key(int key, t_ut *ut);
 void	display_move(t_ut *ut);
 void	find_spawn(t_ut *ut);
 void	ft_escape(t_ut *ut, int key);
+void	move_with_collect(t_ut *ut, int key);
 
 #endif
