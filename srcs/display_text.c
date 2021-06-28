@@ -9,7 +9,6 @@ void	display_text(t_ut *ut)
 
 	j = 0;
 	y = 0;
-	ut->len = ft_strlen(ut->map[0]);
 	while (j < ut->map_size)
 	{
 		i = 0;

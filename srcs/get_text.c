@@ -26,7 +26,7 @@ int	get_text(t_ut *ut)
 	}
 	ut->text[2].addr = (int *)mlx_get_data_addr(ut->text[2].img, &ut->text[2].bpp, &ut->text[2].line_height, &ut->text[2].endian);
 	
-	ut->text[3].img = mlx_xpm_file_to_image(ut->mlx_ptr, "textures/brick.xpm", &(ut->text[3].width), &(ut->text[3].height));
+	ut->text[3].img = mlx_xpm_file_to_image(ut->mlx_ptr, "textures/loot.xpm", &(ut->text[3].width), &(ut->text[3].height));
 	if (!ut->text[3].img)
 	{
 		ft_destroy_text(ut);

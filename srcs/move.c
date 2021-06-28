@@ -40,9 +40,6 @@ int	deal_key(int key, t_ut *ut)
 		display_move(ut);
 		display_text(ut);
 	}
-	printf("take : %d\n", ut->take);
-	printf("coll : %d\n", ut->collect);
-
 	ft_escape(ut, key);
 	return (0);
 }

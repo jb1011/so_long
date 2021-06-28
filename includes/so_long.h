@@ -59,6 +59,8 @@ typedef struct	s_ut
 	void	*mlx_ptr;
 	void	*win_ptr;
 	int		count;
+	int		sizex;
+	int		sizey;
 	t_text	text[5];
 	t_spawn	sp;
 }				t_ut;
@@ -84,5 +86,6 @@ void	display_move(t_ut *ut);
 void	find_spawn(t_ut *ut);
 void	ft_escape(t_ut *ut, int key);
 void	move_with_collect(t_ut *ut, int key);
+int		ft_get_screen_res(t_ut *ut);
 
 #endif
