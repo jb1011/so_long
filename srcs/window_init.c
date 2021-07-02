@@ -1,8 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   window_init.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jdemenet <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/07/02 15:44:51 by jdemenet          #+#    #+#             */
+/*   Updated: 2021/07/02 15:44:56 by jdemenet         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/so_long.h"
 
 void	window_init(t_ut *ut)
 {
-	
 	ut->mlx_ptr = mlx_init();
 	mlx_get_screen_size(ut->mlx_ptr, &ut->sizex, &ut->sizey);
 	if (ft_get_screen_res(ut) == 1)
@@ -25,8 +36,8 @@ int	ft_exit(t_ut *ut)
 
 int	ft_get_screen_res(t_ut *ut)
 {
-	int x;
-	int y;
+	int	x;
+	int	y;
 
 	ut->count = 0;
 	ut->len = ft_strlen(ut->map[0]);

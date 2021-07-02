@@ -12,12 +12,13 @@
 
 #include "../includes/so_long.h"
 
-char				*ft_read_and_join(char *str, int fd, int *ret)
+char	*ft_read_and_join(char *str, int fd, int *ret)
 {
 	char			buff[BUFFER_SIZE + 1];
 	char			*tmp;
 
-	while ((*ret = read(fd, &buff, BUFFER_SIZE)) > 0)
+	*ret = read(fd, &buff, BUFFER_SIZE);
+	while (*ret > 0)
 	{
 		if (*ret == -1)
 			return (str);
@@ -33,11 +34,12 @@ char				*ft_read_and_join(char *str, int fd, int *ret)
 			str = ft_strdup(buff);
 		if (ft_strchr(buff, '\n'))
 			return (str);
+		*ret = read(fd, &buff, BUFFER_SIZE);
 	}
 	return (str);
 }
 
-char				*ft_write_line(char *str, char **line, int ret)
+char	*ft_write_line(char *str, char **line, int ret)
 {
 	unsigned int	i;
 	char			*tmp;
@@ -61,7 +63,7 @@ char				*ft_write_line(char *str, char **line, int ret)
 	return (str);
 }
 
-int					get_next_line(int fd, char **line)
+int	get_next_line(int fd, char **line)
 {
 	static char		*str;
 	int				ret;

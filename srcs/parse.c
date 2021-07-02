@@ -1,9 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parse.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jdemenet <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/07/02 15:46:50 by jdemenet          #+#    #+#             */
+/*   Updated: 2021/07/02 15:46:55 by jdemenet         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/so_long.h"
 
 void	get_map_size(t_ut *ut)
 {
 	int		fd;
-	int		ret;
 	char	*str;
 	int		i;
 
@@ -15,7 +26,7 @@ void	get_map_size(t_ut *ut)
 		return ;
 	}
 	i = 0;
-	while ((ret = get_next_line(fd, &str)) > 0)
+	while (get_next_line(fd, &str) > 0)
 	{
 		i++;
 		free(str);
@@ -29,7 +40,6 @@ void	get_map_size(t_ut *ut)
 void	map_malloc(t_ut *ut)
 {
 	int		fd;
-	int		ret;
 	char	*str;
 	int		i;
 
@@ -37,7 +47,7 @@ void	map_malloc(t_ut *ut)
 	fd = open(ut->map_name, O_RDONLY);
 	ut->map = malloc(sizeof(char *) * (ut->map_size));
 	ut->map_exist = 1;
-	while ((ret = get_next_line(fd, &str)) > 0)
+	while (get_next_line(fd, &str) > 0)
 	{
 		ut->map[i] = ft_strdup(str);
 		i++;
@@ -51,8 +61,8 @@ void	map_malloc(t_ut *ut)
 
 int	map_check(t_ut *ut)
 {
-	if (!is_map(ut) || !map_check_wall(ut) || !map_check_side_wall(ut) ||
-		!map_check_spawn(ut) || !map_check_rect(ut))
+	if (!is_map(ut) || !map_check_wall(ut) || !map_check_side_wall(ut)
+		|| !map_check_spawn(ut) || !map_check_rect(ut))
 	{
 		return (0);
 	}

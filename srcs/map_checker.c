@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   map_checker.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jdemenet <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/07/02 15:46:20 by jdemenet          #+#    #+#             */
+/*   Updated: 2021/07/02 15:46:26 by jdemenet         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/so_long.h"
 
 int	map_check_side_wall(t_ut *ut)
@@ -31,7 +43,6 @@ int	map_check_side_wall(t_ut *ut)
 
 int	map_check_spawn(t_ut *ut)
 {
-	int	i;
 	int	j;
 
 	j = 0;
@@ -41,17 +52,7 @@ int	map_check_spawn(t_ut *ut)
 	ut->take = 0;
 	while (j < ut->map_size)
 	{
-		i = 0;
-		while (ut->map[j][i])
-		{
-			if (ut->map[j][i] == 'P')
-				ut->is_spawn++;
-			if (ut->map[j][i] == 'E')
-				ut->is_exit++;
-			if (ut->map[j][i] == 'C')
-				ut->collect++;
-			i++;
-		}
+		move_spawn(ut, j);
 		j++;
 	}
 	if (ut->is_exit != 1 || ut->is_spawn != 1 || ut->collect == 0)

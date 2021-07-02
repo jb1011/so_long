@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jdemenet <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/07/02 15:41:47 by jdemenet          #+#    #+#             */
+/*   Updated: 2021/07/02 15:41:51 by jdemenet         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "includes/so_long.h"
 
 int	main(int argc, char **argv)
 {
-	t_ut ut;
+	t_ut	ut;
 
 	ut.map_name = argv[1];
 	if (ft_check_ber(&ut) == 1)
@@ -22,7 +34,8 @@ int	ft_check_ber(t_ut *ut)
 	i = 0;
 	while (ut->map_name[i])
 		i++;
-	if (ut->map_name[i - 1] == 'r' && ut->map_name[i - 2] == 'e' && ut->map_name[i - 3] == 'b'
+	if (ut->map_name[i - 1] == 'r'
+		&& ut->map_name[i - 2] == 'e' && ut->map_name[i - 3] == 'b'
 		&& ut->map_name[i - 4] == '.')
 	{
 		return (1);

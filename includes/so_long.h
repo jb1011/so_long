@@ -11,7 +11,6 @@
 # define LEFT 97
 # define ESCAPE 65307
 
-
 # include "../libft/libft.h"
 # include "../minilibx-linux/mlx.h"
 # include <unistd.h>
@@ -23,15 +22,13 @@
 # include <stdio.h>
 # include <fcntl.h>
 
-
-typedef struct	s_spawn
+typedef struct s_spawn
 {
 	int	x;
 	int	y;
 }				t_spawn;
 
-
-typedef struct	s_text
+typedef struct s_text
 {
 	void	*mlx_ptr;
 	void	*mlx_win;
@@ -44,7 +41,7 @@ typedef struct	s_text
 	int		endian;
 }				t_text;
 
-typedef struct	s_ut
+typedef struct s_ut
 {
 	char	*map_name;
 	char	**map;
@@ -61,6 +58,7 @@ typedef struct	s_ut
 	int		count;
 	int		sizex;
 	int		sizey;
+	int		j;
 	t_text	text[5];
 	t_spawn	sp;
 }				t_ut;
@@ -88,5 +86,10 @@ void	ft_escape(t_ut *ut, int key);
 void	move_with_collect(t_ut *ut, int key);
 int		ft_get_screen_res(t_ut *ut);
 int		ft_check_ber(t_ut *ut);
+void	deal_key_up(int key, t_ut *ut);
+void	move_with_collect_up(t_ut *ut, int key);
+void	move_spawn(t_ut *ut, int j);
+int		get_text_2(t_ut *ut);
+void	display_text2(t_ut *ut, int i, int x, int y);
 
 #endif
